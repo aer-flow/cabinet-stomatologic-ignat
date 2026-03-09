@@ -100,7 +100,7 @@ document.addEventListener("DOMContentLoaded", () => {
         gsap.to(testimonialGrid, {
             xPercent: -50,
             ease: "none",
-            duration: 60, // Increased from 30 for a slower, more readable pace
+            duration: 120, // Significantly slowed down for readability
             repeat: -1
         });
     }
