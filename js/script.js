@@ -144,4 +144,31 @@ document.addEventListener("DOMContentLoaded", () => {
             sliderButton.style.left = `${val}%`;
         });
     }
+
+    // 5. Floating Light Particles (Boutique Dust)
+    const particleContainer = document.querySelector('.hero-particles');
+    if(particleContainer) {
+        for(let i = 0; i < 40; i++) {
+            const p = document.createElement('div');
+            p.className = 'particle';
+            const size = Math.random() * 3 + 1;
+            p.style.width = size + 'px';
+            p.style.height = size + 'px';
+            p.style.left = Math.random() * 100 + '%';
+            p.style.top = Math.random() * 100 + '%';
+            p.style.opacity = Math.random() * 0.4;
+            particleContainer.appendChild(p);
+            
+            gsap.to(p, {
+                x: `random(-100, 100)`,
+                y: `random(-100, 100)`,
+                opacity: `random(0, 0.5)`,
+                duration: `random(4, 10)`,
+                repeat: -1,
+                yoyo: true,
+                ease: "sine.inOut",
+                delay: Math.random() * 5
+            });
+        }
+    }
 });
